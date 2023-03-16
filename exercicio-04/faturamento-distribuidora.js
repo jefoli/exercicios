@@ -4,22 +4,26 @@ const faturamentoPorEstado = [
     {estado:'MG', valor: 29_229.88},
     {estado:'ES', valor: 27_165.48},
     {estado:'outros', valor: 19_849.53},
-  ];
+];
   
-  const somaFaturamento = faturamentoPorEstado.reduce((sum, estado) => sum + estado.valor, 0);
+const somaFaturamento = faturamentoPorEstado.reduce((sum, estado) => sum + estado.valor, 0);
+
+const percentuais = faturamentoPorEstado.map((estado) => {
   
-  const percentuais = faturamentoPorEstado.map((estado) => {
-    
     const percentual = (estado.valor / somaFaturamento) * 100;
-    
+  
     return { estado: estado.estado, percentual: percentual };
-  });
+
+});
+
+const percentuaisFormatados = percentuais.map((estado) => {
   
-  const percentuaisFormatados = percentuais.map((estado) => {
     const percentualFormatado = estado.percentual.toFixed(2).replace('.', ',');
-    return { estado: estado.estado, percentual: percentualFormatado };
-  });
   
-  percentuaisFormatados.forEach((estado) => {
+  return { estado: estado.estado, percentual: percentualFormatado };
+});
+
+percentuaisFormatados.forEach((estado) => {
+    
     console.log(`${estado.estado}: ${estado.percentual}%`);
-  });
+});

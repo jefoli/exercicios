@@ -7,17 +7,15 @@ for(let i = text.length - 1; i >= 0; i--){
     inverterOrdem += text[i];
 };
 
-
 //Seginda forma:
 let inverterCaracteres = '';
 
 [...text].forEach(caracter => inverterCaracteres = caracter + inverterCaracteres);
 
-
 console.log(`Primeira forma: ${inverterCaracteres}`); //retorno invertido - Primeira forma:
 console.log('-------------------------');
 
-console.log(`Segunda forma: ${inverterCaracteres}`); //retorno invertido - Primeira forma:
+console.log(`Segunda forma: ${inverterCaracteres}`); //retorno invertido - Segunda forma:
 console.log('-------------------------');
 
 console.log(text);

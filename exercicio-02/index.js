@@ -1,24 +1,32 @@
 //2) RESPOSTA:
 
 function FibonacciCalc(value) {
+  
   let sequencia = 0;
+  
   let somador = 1;
 
   if(isNaN(value)) {
+    
     console.log('Você precisa digitar somente números!');
     console.log('-------------------------------------');
+    
     return;
   }
   
   if(value !== 'string') {
+    
     value = parseInt(value);
+
   }
 
   while(sequencia <= value ) {
     
     if(sequencia === value) {
+      
       console.log(`${value} - Esse número pertence a sequência de Fibonacci!`);
       console.log('--------------------------------------------------');
+      
       return;
     }
     
@@ -33,6 +41,7 @@ function FibonacciCalc(value) {
 
   console.log(`${value} - Esse número NÃO pertence a sequência de Fibonacci!`);
   console.log('-------------------------------------------------------');
+  
   return;
 }
 
